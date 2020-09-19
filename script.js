@@ -54,7 +54,7 @@ const stopTimer = () => {
 }
 
 const saveTimer = () => {
-    var datetime = new Date().toISOString().substr(0, 19).replace('T', ' ');
+    var datetime = new Date().getTimezoneOffset().toISOString().substr(0, 19).replace('T', ' ');
                 
 	let taskname   = (task.value == "") ? "Empty Task" : task.value.replace(/<[^>]*>/g, ''),
 		timerstate = timer.textContent,
