@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ABAdata</title>
+	<link rel="stylesheet" href="https://unpkg.com/chota@latest">
+</head>
+<body>
+	<div id="top" class="container" role="document">
+		<header role="banner">
+      		<h1>ABAdata<img src="https://icongr.am/feather/clock.svg?size=35&color=14854f"></h1>
+    	</header>
+    	<fieldset>
+    		<legend>Controls</legend>
+  			<input type="text" id="task" placeholder="Task">
+  			<br>
+  			<p class="grouped is-center">
+          <button class="button" id="counter">Frequency</button>
+  				<button class="button primary icon" id="start">Start</button>
+    			<button class="button error icon" id="stop">Stop</button>
+    			<button class="button dark" id="reset">Reset</button>
+    			<button class="button default" id="save">Save</button>
+    		</p>
+    	</fieldset>
+    	<fieldset>
+    		<legend>Timer</legend>
+    		<time id="timer" class="is-center" style="font-size: 60px">
+    			00:00:00
+    		</time>
+        <p>Frequency: <a id="frequency">0</a></p>
+    	</fieldset>
+    	<fieldset>
+    		<legend>History</legend>
+    		<table class="striped" id="history-table">
+    			<thead>
+    				<tr>
+    					<th>Behavior</th>
+						  <th>Date</th>
+              <th>Time</th>
+              <th>Frequency</th>
+    				</tr>
+    			</thead>
+    			<tfoot id="history">
+
+    			</tfoot>
+    		</table>
+    		<br>
+    		<p class="grouped is-center">
+    			<button class="button secondary" id="clear">Clear History</button>
+    			<button class="button secondary" id="export">Export History</button>
+    		</p>
+    	</fieldset>
+	</div>
+	<br>
+	<footer class="is-text-center" style="padding: 3rem">
+		<p>
+			ABAdata is a tracker of date and time for behaviors.  It exports into a .csv file, readable in spreadsheet format.
+		</p>
+  	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
+	<script>
+		const options = {
+			buttonColorLight: '#14854f',
+			label: '🌓',
+			autoMatchOsTheme: true
+		}
+
+		const darkmode = new Darkmode(options);
+		darkmode.showWidget();
+	</script>
+	<script src="csvUtils.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="style.css">
+</body>
+</html>
