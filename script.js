@@ -56,12 +56,12 @@ const stopTimer = () => {
 const saveTimer = () => {
     let today = new Date();
     
-    let datetime = today.getDate() + "/"
-                + (today.getMonth()+1)  + "/" 
+    let datetime = (today.getMonth()+1)  + "/"
+                + today.getDate() + "/"
                 + today.getFullYear() + " @ "  
-                + today.getHours() + ":"  
-                + today.getMinutes() + ":" 
-                + today.getSeconds();
+                + today.getHours().slice(-2) + ":"  
+                + today.getMinutes().slice(-2) + ":" 
+                + today.getSeconds().slice(-2);
                 
 	let taskname   = (task.value == "") ? "Empty Task" : task.value.replace(/<[^>]*>/g, ''),
 		timerstate = timer.textContent,
