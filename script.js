@@ -54,7 +54,6 @@ const stopTimer = () => {
 }
 
 const saveTimer = () => {
-    // var datetime = new Date().toISOString().substr(0, 19).replace('T', ' ');
   var datetime = new Date();
   datetime.toString()
 	let taskname   = (task.value == "") ? "Empty Task" : task.value.replace(/<[^>]*>/g, ''),
@@ -68,7 +67,7 @@ const saveTimer = () => {
 
 const clearTimer = () => {
 	timer.textContent = "00:00:00";
-  frequency.textContent = "0";
+    frequency.textContent = "0";
 	sec  = 0;
 	min  = 0;
 	hour = 0;
